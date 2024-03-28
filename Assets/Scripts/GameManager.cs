@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI displayText;
     [SerializeField] private GameObject[] squareButtons;
     [SerializeField] private GameObject[] strikeOuts;
+    [SerializeField] private GameObject gamePanel;
     private string gameWinner;
 
-    // Start is called before the first frame update
-    void Start()
+    public string localPlayerSymbol;
+
+    bool gameStarted;
+
+    public void StartGame()
     {
+        gameStarted = true;
+        gamePanel.SetActive(true);
+
         currentTurn = "X";
         updateCurrentTurn();
     }
